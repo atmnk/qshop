@@ -6,9 +6,12 @@ import { Toaster } from "@/components/ui/sonner";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
+const appName = process.env.NEXT_PUBLIC_APP_NAME ?? "Qshop";
+const appDescription = process.env.NEXT_PUBLIC_APP_DESCRIPTION ?? "A marketplace for buyers and sellers.";
+
 export const metadata: Metadata = {
-  title: { default: "qshop", template: "%s | qshop" },
-  description: "A marketplace for buyers and sellers.",
+  title: { default: appName, template: `%s | ${appName}` },
+  description: appDescription,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
