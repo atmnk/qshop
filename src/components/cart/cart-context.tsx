@@ -63,7 +63,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, { items: [] }, (init) => {
     if (typeof window === "undefined") return init;
     try {
-      const stored = localStorage.getItem("qshop_cart");
+      const stored = localStorage.getItem(`${process.env.NEXT_PUBLIC_APP_NAME}_cart`);
       return stored ? JSON.parse(stored) : init;
     } catch {
       return init;
@@ -71,7 +71,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   });
 
   useEffect(() => {
-    localStorage.setItem("qshop_cart", JSON.stringify(state));
+    localStorage.setItem(`${process.env.NEXT_PUBLIC_APP_NAME}_cart`, JSON.stringify(state));
   }, [state]);
 
   const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);

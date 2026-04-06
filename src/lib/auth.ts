@@ -31,9 +31,9 @@ export const auth = betterAuth({
   emailVerification: {
     sendVerificationEmail: async ({ user, url }) => {
       await transporter.sendMail({
-        from: `"qshop" <${process.env.MAILJET_FROM_EMAIL}>`,
+        from: `{process.env.NEXT_PUBLIC_APP_NAME} <${process.env.MAILJET_FROM_EMAIL}>`,
         to: user.email,
-        subject: "Verify your qshop email",
+        subject: `Verify your ${process.env.NEXT_PUBLIC_APP_NAME} email`,
         html: `
           <p>Hi ${user.name},</p>
           <p>Click the link below to verify your email address:</p>

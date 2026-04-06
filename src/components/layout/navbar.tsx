@@ -42,7 +42,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl">
           <Package className="h-5 w-5" />
-          qshop
+          {process.env.NEXT_PUBLIC_APP_NAME}
         </Link>
 
         {/* Desktop nav */}

@@ -6,7 +6,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-muted/30">
       <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-8">
         <Package className="h-5 w-5" />
-        qshop
+        {process.env.NEXT_PUBLIC_APP_NAME}
       </Link>
       {children}
     </div>

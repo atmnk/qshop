@@ -23,7 +23,7 @@ export default async function SellerLayout({ children }: { children: React.React
         <div className="p-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-lg">
             <Package className="h-5 w-5" />
-            qshop
+            {process.env.NEXT_PUBLIC_APP_NAME}
           </Link>
           <p className="text-xs text-muted-foreground mt-1">Seller portal</p>
         </div>
